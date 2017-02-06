@@ -52,7 +52,8 @@ describe('UserInput', () => {
   })
 
   it('updates the store when the form is submitted', () => {
-    const wrapper = shallow(<UserInput store={configureStore()}/>)
+    let store = configureStore()
+    const wrapper = shallow(<UserInput store={store}/>)
     expect(wrapper.state('hometown')).to.equal('')
     let userNameInput = wrapper.find('input').first()
     userNameInput.simulate('change', { target: { value: 'Bob' } })

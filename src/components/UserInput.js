@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { addUser } from '../actions/users'
+
+
 class UserInput extends Component {
   constructor(props){
     super(props)
@@ -13,7 +14,7 @@ class UserInput extends Component {
   }
   handleOnSubmit(event){
     event.preventDefault()
-    this.props.store.dispatch(addUser(this.state))
+    this.props.store.dispatch({type: 'ADD_USER', payload: this.state})
   }
   render(){
     return(
