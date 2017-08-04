@@ -49,7 +49,7 @@ describe('UserInput', () => {
     const wrapper = shallow(<UserInput />);
     expect(wrapper.state('username')).to.equal('');
     let input = wrapper.find('input').first();
-    input.simulate('change', { target: { value: 'Hello' } });
+    input.simulate('change', { target: { value: 'Hello', name: 'username' } });
     expect(wrapper.state('username')).to.equal('Hello');
   })
 
@@ -57,7 +57,7 @@ describe('UserInput', () => {
     const wrapper = shallow(<UserInput />);
     expect(wrapper.state('hometown')).to.equal('');
     let input = wrapper.find({type: 'text'}).last();
-    input.simulate('change', { target: { value: 'Hello' } });
+    input.simulate('change', { target: { value: 'Hello', name: 'hometown' } });
     expect(wrapper.state('hometown')).to.equal('Hello');
   })
 
@@ -66,9 +66,9 @@ describe('UserInput', () => {
     const wrapper = shallow(<UserInput store={store} />);
     expect(wrapper.state('hometown')).to.equal('');
     let usernameInput = wrapper.find('input').first();
-    usernameInput.simulate('change', { target: { value: 'Bob' } });
+    usernameInput.simulate('change', { target: { value: 'Bob', name: 'username' } });
     let hometownInput = wrapper.find({ type: 'text' }).last();
-    hometownInput.simulate('change', { target: { value: 'philly' } });
+    hometownInput.simulate('change', { target: { value: 'philly', name: 'hometown' } });
     let form = wrapper.find('form').first();
     form.simulate('submit',  { preventDefault() {} });
     expect(store.getState()).to.deep.equal({ users: [ { username: 'Bob', hometown: 'philly' } ] });
