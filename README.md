@@ -10,4 +10,4 @@ Ok, we will be building a simple React & Redux application to add new users. Jus
 
 ## Instructions
 
-Run `npm install` to install the npm modules for this application. To install redux, run `npm install redux react-redux --save`. This gives you access to the createStore method. You can see that we have already applied the method, but with an empty function. Instead, write a reducer in the `reducers/manageBand.js` file. Follow the tests to build out the proper reducer.
+Run `npm install` to install the npm modules for this application. To install redux, run `npm install redux react-redux --save`. This gives you access to the createStore method. You can see that we have already applied the method, but with an empty function. Instead, write a reducer in the `reducers/manageUsers.js` file. Follow the tests to build out the proper reducer.
